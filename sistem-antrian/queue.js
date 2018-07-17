@@ -20,19 +20,19 @@ class Queue {
     return this._queueNumber = newNumber;
   }
 
-  addQueue(data) {
-    if (data.length === 0){
+  addQueue(arr) {
+    if (arr.length === 0){
       this.queueNumber = 1;
     } else {
-      this.queueNumber = data[data.length - 1] + 1;
+      this.queueNumber = arr[arr.length - 1] + 1;
     }
-    data.push(this._queueNumber);
-    return this.queue = data;
+    arr.push(this._queueNumber);
+    return this.queue = arr;
   }
 
-  removeQueue(data) {
-    this.queue = data;
-    this.queueNumber = data[0];
+  removeQueue(arr) {
+    this.queue = arr;
+    this.queueNumber = arr[0];
     return this.queue.shift();
   }
 }
