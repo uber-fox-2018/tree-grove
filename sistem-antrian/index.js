@@ -52,13 +52,21 @@ class Index {
         this.writeFile(dataParsing)
     }else if(Number(menuNo) === 3){
         var dataParsing = this.readFile()
-        console.log(`Nomor antrian CS-${dataParsing[1].queues[0]} silakan menuju ke Costumer Service`);
+        if(dataParsing[1].queues.length === 0){
+          console.log('antrian kosong');
+        }else{
+          console.log(`Nomor antrian CS-${dataParsing[1].queues[0]} silakan menuju ke Costumer Service`);
+        }
         
         this._cs.shiftData(dataParsing[1])
         this.writeFile(dataParsing)
     }else if(Number(menuNo) === 4){
         var dataParsing = this.readFile()
-        console.log(`Nomor antrian CS-${dataParsing[0].queues[0]} silakan menuju ke Teller`);
+        if(dataParsing[0].queues.length === 0){
+          console.log('antrian kosong');
+        }else{
+          console.log(`Nomor antrian TL-${dataParsing[0].queues[0]} silakan menuju ke Teller`);
+        }
         this._teller.shiftData(dataParsing[0])
         this.writeFile(dataParsing)
     }
