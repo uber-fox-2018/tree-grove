@@ -1,27 +1,23 @@
 class Queue {
   constructor() {
     this._queueNumber = null;
-    this._queue = []
+    this._queue = [];
   }
 
-  get queueNumber(){
-    return this._queueNumber;
+  addQueue(data) {
+    if (data.length === 0){
+      this._queueNumber = 1;
+    } else {
+      this._queueNumber = data[data.length - 1] + 1;
+    }
+    data.push(this._queueNumber);
+    return this._queue = data;
   }
 
-  set queueNumber(newValue){
-    return this._queueNumber = newValue;
-  }
-
-  get queue(){
-    return this._queue;
-  }
-
-  addQueue() {
-    return this.queue.push(this.queueNumber);
-  }
-
-  removeQueue() {
-    return this.queue.shift();
+  removeQueue(data) {
+    this._queue = data;
+    this._queueNumber = data[0];
+    return this._queue.shift();
   }
 }
 
