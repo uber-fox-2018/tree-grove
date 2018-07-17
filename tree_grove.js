@@ -34,7 +34,7 @@ class TreeGrove {
 
 	showAges(){
 		for(let tree of this.trees){
-			console.log(`${tree._name} : ${tree._age}`)
+			console.log(`${tree._name} sekarang berumur: ${tree._age} tahun`)
 		}
 	}
 
