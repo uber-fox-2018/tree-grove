@@ -1,0 +1,36 @@
+[
+  {
+    "employee-type": "teller",
+    "queues": [],
+    "detail":
+    [
+      {
+        "name": "adhit",
+        "level": "teller",
+        "isEmpty": true
+      },
+      {
+        "name": "akbar",
+        "level": "teller",
+        "isEmpty": true
+      }
+    ]
+  },
+  {
+    "employee-type": "customer-service",
+    "queues": [],
+    "detail":
+    [
+      {
+        "name": "windi",
+        "level": "customer-service",
+        "isEmpty": true
+      },
+      {
+        "name": "ryan",
+        "level": "customer-service",
+        "isEmpty": true
+      }
+    ]
+  }
+]
