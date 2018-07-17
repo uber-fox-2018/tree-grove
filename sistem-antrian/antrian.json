@@ -1,1 +1,1 @@
-[{"division":"teller","queues":[]},{"division":"customer-service","queues":[]}]
+[{"division":"teller","queues":[2,3]},{"division":"customer-service","queues":[2]}]

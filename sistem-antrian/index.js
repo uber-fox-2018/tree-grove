@@ -34,6 +34,16 @@ class Index {
 
   choose(menuNo) {
     let message = ''
+    if (!command || command === 'help') {
+      const menuHelp = (`
+        $ MENU:
+        $ 1. Ambil antrian Customer Service: node index.js 1
+        $ 2. Ambil antrian Teller: node index.js 2
+        $ 3. Panggil antrian Customer Service: node index.js 3
+        $ 4. Panggil antrian Teller: node index.js 4
+      `)
+      return menuHelp
+    }
     switch(menuNo) {
       case '1': {
         this.cs.addAntrian(this.data[1])
@@ -73,10 +83,10 @@ class Index {
       }
     }
   }
-
 }
+
+
 
 let antri = new Index();
 console.log(antri.choose(command))
-// console.log(antri.cs)
-// console.log(antri.teller)
+
