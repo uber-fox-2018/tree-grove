@@ -2,7 +2,28 @@ const MangoTree = require('./mango_tree.js');
 const AppleTree = require('./apple_tree.js');
 const PearTree = require('./pear_tree.js');
 
-class TreeGrove {}
+class TreeGrove {
+    constructor(){
+
+    }
+
+    inputTree(){
+
+    }
+
+    showAges(){
+
+    }
+
+    showMatureTrees(){
+
+    }
+
+    showDeadTrees(){
+
+    }
+    
+}
 
 var grove = new TreeGrove()
 // input your trees data !
