@@ -5,12 +5,16 @@ class Teller {
     this._queue = new Queue();
   }
 
+  get queue(){
+    return this._queue;
+  }
+
   add (data){
-    this._queue.addQueue(data);
+    this.queue.addQueue(data);
   }
 
   call (data){
-    this._queue.removeQueue(data);
+    this.queue.removeQueue(data);
   }
 }
 

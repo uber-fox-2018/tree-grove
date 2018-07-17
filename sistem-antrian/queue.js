@@ -4,20 +4,36 @@ class Queue {
     this._queue = [];
   }
 
+  get queue (){
+    return this._queue;
+  }
+
+  set queue (newQueue){
+    return this._queue = newQueue;
+  }
+
+  get queueNumber (){
+    return this._queueNumber;
+  }
+
+  set queueNumber (newNumber){
+    return this._queueNumber = newNumber;
+  }
+
   addQueue(data) {
     if (data.length === 0){
-      this._queueNumber = 1;
+      this.queueNumber = 1;
     } else {
-      this._queueNumber = data[data.length - 1] + 1;
+      this.queueNumber = data[data.length - 1] + 1;
     }
     data.push(this._queueNumber);
-    return this._queue = data;
+    return this.queue = data;
   }
 
   removeQueue(data) {
-    this._queue = data;
-    this._queueNumber = data[0];
-    return this._queue.shift();
+    this.queue = data;
+    this.queueNumber = data[0];
+    return this.queue.shift();
   }
 }
 

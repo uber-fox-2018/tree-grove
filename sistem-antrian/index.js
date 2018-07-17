@@ -10,6 +10,18 @@ class Index {
     this._teller = new Teller();
   }
 
+  get data () {
+    return this._data;
+  }
+
+  get CS (){
+    return this._CS;
+  }
+
+  get teller (){
+    return this._teller;
+  }
+
   readFile() {
     return fs.readFileSync('queue.json').toString();
   }
@@ -19,31 +31,31 @@ class Index {
   }
 
   addQueueCS(){
-    this._CS.add (this._data[1].queues);
-    this._data[1].queues = this._CS._queue._queue;
-    this.writeFile(JSON.stringify(this._data));
-    console.log(`Nomor antrian anda adalah CS-${this._CS._queue._queueNumber}`);
+    this.CS.add (this._data[1].queues);
+    this.data[1].queues = this.CS.queue.queue;
+    this.writeFile(JSON.stringify(this.data));
+    console.log(`Nomor antrian anda adalah CS-${this.CS.queue.queueNumber}`);
   }
 
   addQueueTeller(){
-    this._teller.add (this._data[0].queues);
-    this._data[0].queues = this._teller._queue._queue;
-    this.writeFile(JSON.stringify(this._data));
-    console.log(`Nomor antrian anda adalah TL-${this._teller._queue._queueNumber}`);
+    this.teller.add (this.data[0].queues);
+    this.data[0].queues = this.teller.queue.queue;
+    this.writeFile(JSON.stringify(this.data));
+    console.log(`Nomor antrian anda adalah TL-${this.teller.queue.queueNumber}`);
   }
 
   callQueueCS(){
-    this._CS.call(this._data[1].queues);
-    this._data[1].queues = this._CS._queue._queue;
-    this.writeFile(JSON.stringify(this._data));
-    console.log(`Nomor antrian CS-${this._CS._queue._queueNumber} silakan menuju ke Customer Service`);
+    this.CS.call(this.data[1].queues);
+    this.data[1].queues = this.CS.queue.queue;
+    this.writeFile(JSON.stringify(this.data));
+    console.log(`Nomor antrian CS-${this.CS.queue.queueNumber} silakan menuju ke Customer Service`);
   }
 
   callQueueTeller(){
-    this._teller.call(this._data[0].queues);
-    this._data[0].queues = this._teller._queue._queue;
-    this.writeFile(JSON.stringify(this._data));
-    console.log(`Nomor antrian TL-${this._teller._queue._queueNumber} silakan menuju ke Customer Service`);
+    this.teller.call(this.data[0].queues);
+    this.data[0].queues = this.teller.queue.queue;
+    this.writeFile(JSON.stringify(this.data));
+    console.log(`Nomor antrian TL-${this.teller.queue.queueNumber} silakan menuju ke Customer Service`);
   }
 
   do(command){
