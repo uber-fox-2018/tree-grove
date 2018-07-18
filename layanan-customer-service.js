@@ -1,24 +1,26 @@
 let { Queue } = require("./queue");
+let { Employee } = require("./employee");
 
 class LayananCustomerService {
   constructor() {
-    this.division = "customer-service";
     this.queues = new Queue();
-    // console.log();
+    this.detail = new Employee();
+
+    //your code here
   }
 
-  addListQueue(data) {
+  addQueueCs(data) {
     this.queues.addQueue(data);
   }
 
-  removeQueue(data){
+  removeQueueCs(data,status){
     this.queues.popQueue(data);
-
+    this.detail.CallEmployee(status)
   }
+
+
 }
 
 module.exports = {
   LayananCustomerService
 };
-
-// let customerService= new LayananCustomerService()

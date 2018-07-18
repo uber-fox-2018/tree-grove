@@ -1,22 +1,22 @@
 let { Queue } = require("./queue");
-
+let { Employee } = require("./employee");
 
 class LayananTeller {
   constructor() {
-    this.division='teller'
-    this.queues=new Queue();
+    this.queues = new Queue();
+    this.detail = new Employee();
+    //your code here
   }
 
-  addListQueue(data) {
-    
-     this.queues.addQueue(data)
+  addQueueTL(data) {
+    this.queues.addQueue(data);
+    this.detail.CallEmployee(data)
   }
 
-  removeQueue(data){
-
-    this.queues.popQueue(data)
+  removeQueueTl(data,status){
+    this.queues.popQueue(data);
+    this.detail.CallEmployee(status)
   }
-
 }
 
 module.exports = {
