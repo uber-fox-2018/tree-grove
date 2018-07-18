@@ -1,28 +1,17 @@
 const MangoTree = require('./mango_tree.js');
 const AppleTree = require('./apple_tree.js');
 const PearTree = require('./pear_tree.js');
-var pohonMangga = new MangoTree
-var pohonApple = new AppleTree
-var pohonPear = new PearTree
+const FruitTree = require('./fruit_tree.js')
+var pohonBuah = new FruitTree
 
 class TreeGrove {
     constructor(){
         this.tree = []
     }
     inputTree(nama,age,height,mature,healthStatus){ // input pohon
-        if(nama === 'MangoTree'){
-            pohonMangga = new MangoTree(nama,age,height,mature,healthStatus)
-            this.tree.push(pohonMangga)
-        }else if(nama === 'AppleTree'){
-            pohonApple = new AppleTree(nama,age,height,mature,healthStatus)
-            this.tree.push(pohonApple)
-        }else if(nama === 'PearTree'){
-            pohonPear = new PearTree(nama,age,height,mature,healthStatus)
-            this.tree.push(pohonPear)
-        }
         
-
-        
+        pohonBuah = new FruitTree(nama,age,height,mature,healthStatus)
+        this.tree.push(pohonBuah)
         
     }
     nextYear(){
@@ -90,7 +79,7 @@ var grove = new TreeGrove()
 grove.inputTree("MangoTree", 3, 1.8, 7, true)
 grove.inputTree("MangoTree", 5, 2.4, 12 ,true)
 grove.inputTree("AppleTree", 4, 1.2, 5, true)
-grove.inputTree("PearTree", 2, 2, 15, true)
+grove.inputTree("PearTree", 20, 2, 15, true)
 
 // console.log(grove.tree[3]._name)
 // next year
